@@ -4,10 +4,10 @@ namespace LoginSystemView.Models
 {
     public class UserLogin
     {
-        [Required]
+        [Required(ErrorMessage ="UserName is required")]
         public string UserName { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "password is required")]
         public string Password { get; set; }
     }
 }

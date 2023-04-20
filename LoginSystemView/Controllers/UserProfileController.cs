@@ -1,4 +1,6 @@
-﻿using LoginSystemView.Models;
+﻿using AspNetCoreHero.ToastNotification.Abstractions;
+using AspNetCoreHero.ToastNotification.Notyf;
+using LoginSystemView.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -16,11 +18,13 @@ namespace LoginSystemView.Controllers
     {
         private readonly IConfiguration _configuration;
         private readonly IHttpContextAccessor _httpContextAccessor;
+        private readonly INotyfService _notyfService;
 
-        public UserProfileController(IConfiguration configuration, IHttpContextAccessor httpContextAccessor)
+        public UserProfileController(IConfiguration configuration, IHttpContextAccessor httpContextAccessor, INotyfService notyfService)
         {
             _configuration = configuration;
             _httpContextAccessor = httpContextAccessor;
+            _notyfService = notyfService;
         }
         public async  Task<IActionResult> Index()
         {
@@ -132,12 +136,13 @@ namespace LoginSystemView.Controllers
                     if (response.IsSuccessStatusCode)
                     {
                         var content = await response.Content.ReadAsStringAsync();
-
+                        _notyfService.Success("User Profile created");
                         return RedirectToAction("Index");
 
                     }
-
+                    _notyfService.Error("User Profile not creat");
                     return RedirectToAction("Index");
+                  
 
                 }
             }
@@ -223,11 +228,12 @@ namespace LoginSystemView.Controllers
                     if (response.IsSuccessStatusCode)
                     {
                         var content = await response.Content.ReadAsStringAsync();
-
+;
+                        _notyfService.Success($"Successfully edit the UserId {Profile.UserId}");
                         return RedirectToAction("Index");
 
                     }
-
+                    _notyfService.Error($"failed edit the UserId {Profile.UserId}");
                     return RedirectToAction("Index");
 
                 }
@@ -254,13 +260,16 @@ namespace LoginSystemView.Controllers
                 httpClient.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", HttpContext.Session.GetString("token").ToString());
                 HttpContent body = new StringContent(JsonConvert.SerializeObject(obj), Encoding.UTF8, "application/json");
                 var response = httpClient .PostAsync(baseUrl + "/api/UserRegister/ChangePassword", body).Result;
-                if (response.IsSuccessStatusCode)
-                {
-                    RedirectToAction("Index", "Dashboard");
-                }
+            if (!response.IsSuccessStatusCode)
+            {
+                _notyfService.Error("Failed to change password");
                 return View();
-           
-            
+                
+            }
+            _notyfService.Success("Successfully change password");
+            return  RedirectToAction("Index", "Dashboard");
+
+
         }
 
 

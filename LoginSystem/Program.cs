@@ -64,7 +64,7 @@ builder.Services.AddAuthentication(configureOptions: option =>
 
     };
 });
-builder.Services.AddTransient<IEmailSender, IEmailSender>(i =>
+builder.Services.AddTransient<IEmailSender, EmailSender>(i =>
 new EmailSender(
     builder.Configuration["EmailSender:Host"],
                     builder.Configuration.GetValue<int>("EmailSender:Port"),

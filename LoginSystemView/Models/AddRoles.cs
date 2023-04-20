@@ -4,7 +4,7 @@ namespace LoginSystemView.Models
 {
     public class AddRoles
     {
-        [Required]
+        [Required(ErrorMessage ="Role Name is required")]
         public string Name { get; set; }
 
     }

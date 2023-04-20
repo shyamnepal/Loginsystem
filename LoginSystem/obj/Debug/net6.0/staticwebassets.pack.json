@@ -1,48 +1,16 @@
 {
   "Files": [
     {
-      "Id": "C:\\Company Project\\LoginSystem\\LoginSystem\\wwwroot\\images\\1cbc278c-5336-4d4f-86fe-021bab353c79_WhatsApp Image 2022-08-20 at 7.58_edited.jpg",
-      "PackagePath": "staticwebassets\\images\\1cbc278c-5336-4d4f-86fe-021bab353c79_WhatsApp Image 2022-08-20 at 7.58_edited.jpg"
+      "Id": "C:\\Company Project\\LoginSystem\\LoginSystem\\wwwroot\\images\\0e11aff1-ae32-494d-934f-1c48461922e8_WhatsApp Image 2022-08-20 at 7.58_edited.jpg",
+      "PackagePath": "staticwebassets\\images\\0e11aff1-ae32-494d-934f-1c48461922e8_WhatsApp Image 2022-08-20 at 7.58_edited.jpg"
     },
     {
-      "Id": "C:\\Company Project\\LoginSystem\\LoginSystem\\wwwroot\\images\\1ddfe2e8-9f59-4d0c-a262-a010017ffbb6_kamldai.jpg",
-      "PackagePath": "staticwebassets\\images\\1ddfe2e8-9f59-4d0c-a262-a010017ffbb6_kamldai.jpg"
+      "Id": "C:\\Company Project\\LoginSystem\\LoginSystem\\wwwroot\\images\\76ad6ad4-59c7-4acb-ab51-4ae6adbdbdf1_gosaikundalake_edited1.jpg",
+      "PackagePath": "staticwebassets\\images\\76ad6ad4-59c7-4acb-ab51-4ae6adbdbdf1_gosaikundalake_edited1.jpg"
     },
     {
-      "Id": "C:\\Company Project\\LoginSystem\\LoginSystem\\wwwroot\\images\\43564580-9759-4289-a9d2-82b93c88d35a_WhatsApp Image 2022-08-20 at 7.58_edited.jpg",
-      "PackagePath": "staticwebassets\\images\\43564580-9759-4289-a9d2-82b93c88d35a_WhatsApp Image 2022-08-20 at 7.58_edited.jpg"
-    },
-    {
-      "Id": "C:\\Company Project\\LoginSystem\\LoginSystem\\wwwroot\\images\\4bff7a64-45be-4c2f-b257-a5fbeac3c422_kamldai.jpg",
-      "PackagePath": "staticwebassets\\images\\4bff7a64-45be-4c2f-b257-a5fbeac3c422_kamldai.jpg"
-    },
-    {
-      "Id": "C:\\Company Project\\LoginSystem\\LoginSystem\\wwwroot\\images\\5c1c79ec-f221-4afb-bc50-59eedb2b2e72_shyamGosaikunda_edited.jpg",
-      "PackagePath": "staticwebassets\\images\\5c1c79ec-f221-4afb-bc50-59eedb2b2e72_shyamGosaikunda_edited.jpg"
-    },
-    {
-      "Id": "C:\\Company Project\\LoginSystem\\LoginSystem\\wwwroot\\images\\7cf24c05-2b40-4243-8dd5-97680702c09c_shyamGosaikunda_edited.jpg",
-      "PackagePath": "staticwebassets\\images\\7cf24c05-2b40-4243-8dd5-97680702c09c_shyamGosaikunda_edited.jpg"
-    },
-    {
-      "Id": "C:\\Company Project\\LoginSystem\\LoginSystem\\wwwroot\\images\\8c1592a7-5cd2-4d4f-8716-c7f40d82c18c_WhatsApp Image 2022-08-20 at 7.58_edited.jpg",
-      "PackagePath": "staticwebassets\\images\\8c1592a7-5cd2-4d4f-8716-c7f40d82c18c_WhatsApp Image 2022-08-20 at 7.58_edited.jpg"
-    },
-    {
-      "Id": "C:\\Company Project\\LoginSystem\\LoginSystem\\wwwroot\\images\\8c719d3f-1783-43df-9a18-10febac916ac_shyamGosaikunda_edited.jpg",
-      "PackagePath": "staticwebassets\\images\\8c719d3f-1783-43df-9a18-10febac916ac_shyamGosaikunda_edited.jpg"
-    },
-    {
-      "Id": "C:\\Company Project\\LoginSystem\\LoginSystem\\wwwroot\\images\\9f9c169b-3d04-42e9-a8ea-6343f9812a7a_kamldai.jpg",
-      "PackagePath": "staticwebassets\\images\\9f9c169b-3d04-42e9-a8ea-6343f9812a7a_kamldai.jpg"
-    },
-    {
-      "Id": "C:\\Company Project\\LoginSystem\\LoginSystem\\wwwroot\\images\\a9110efa-e981-4e9f-b118-9f1ab1fc7314_WhatsApp Image 2022-08-20 at 7.58_edited.jpg",
-      "PackagePath": "staticwebassets\\images\\a9110efa-e981-4e9f-b118-9f1ab1fc7314_WhatsApp Image 2022-08-20 at 7.58_edited.jpg"
-    },
-    {
-      "Id": "C:\\Company Project\\LoginSystem\\LoginSystem\\wwwroot\\images\\f191c3b0-4121-498a-990a-729e58b1d63e_shyamGosaikunda_edited.jpg",
-      "PackagePath": "staticwebassets\\images\\f191c3b0-4121-498a-990a-729e58b1d63e_shyamGosaikunda_edited.jpg"
+      "Id": "C:\\Company Project\\LoginSystem\\LoginSystem\\wwwroot\\images\\cd9c180e-6c83-48a1-abdb-a15848aeec3f_gosaikundalake_edited1.jpg",
+      "PackagePath": "staticwebassets\\images\\cd9c180e-6c83-48a1-abdb-a15848aeec3f_gosaikundalake_edited1.jpg"
     },
     {
       "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.LoginSystem.Microsoft.AspNetCore.StaticWebAssets.props",

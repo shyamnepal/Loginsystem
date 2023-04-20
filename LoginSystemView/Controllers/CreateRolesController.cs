@@ -1,4 +1,5 @@
-﻿using LoginSystemView.Models;
+﻿using AspNetCoreHero.ToastNotification.Abstractions;
+using LoginSystemView.Models;
 using LoginSystemView.Services.IServices;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
@@ -15,16 +16,19 @@ namespace LoginSystemView.Controllers
         private  readonly IConfiguration _configuration;
         private readonly IHttpContextAccessor _httpContextAccessor;
         private readonly IUserRoles _userRole;
+        private readonly INotyfService _notyfService;
         public CreateRolesController(
             IConfiguration configuration,
             IHttpContextAccessor httpContextAccessor,
-            IUserRoles userRole
+            IUserRoles userRole,
+            INotyfService notyfService
             )
            
         {
             _configuration = configuration;
             _httpContextAccessor = httpContextAccessor;
             _userRole = userRole;
+            _notyfService = notyfService;
         }
         [Authorize]
         public async Task<IActionResult> Index()
@@ -66,17 +70,21 @@ namespace LoginSystemView.Controllers
         [Authorize]
         public async Task<IActionResult> AddRoles(AddRoles role)
 
-        { 
+        {
+            if (!ModelState.IsValid)
+                return View("Index");
+
             AddRoles userRole = new AddRoles();
             userRole.Name = role.Name;
 
             var response = await _userRole.CreateAsync<Response>(role);
-            if (response!=null)
+            if (response!=null && response.IsSuccess)
             {
                 //var content = await response.Content.ReadAsStringAsync();
+                _notyfService.Success("Successfully Add Roles");
                 return RedirectToAction("Index");
             }
-
+            _notyfService.Error(response.ErrorMessages.ToString());
             return RedirectToAction("Index");
         }
     }

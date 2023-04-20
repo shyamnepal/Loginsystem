@@ -8,6 +8,7 @@ using Microsoft.Extensions.DependencyInjection.Extensions;
 
 using LoginSystemView.Services.IServices;
 using LoginSystemView.Services;
+using AspNetCoreHero.ToastNotification.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -31,10 +32,17 @@ builder.Services.AddSession(option =>
 {
     option.IdleTimeout = TimeSpan.FromMinutes(20);
 });
-builder.Services.AddRazorPages().AddNToastNotifyNoty(new NotyOptions
+//builder.Services.AddRazorPages().AddNToastNotifyNoty(new NotyOptions
+//{
+//    ProgressBar = true,
+//    Timeout = 1000
+//});
+builder.Services.AddNotyf(configure =>
 {
-    ProgressBar = true,
-    Timeout = 1000
+    configure.DurationInSeconds = 5;
+    configure.IsDismissable = true;
+    configure.Position = NotyfPosition.TopRight;
+
 });
 
 builder.Services.AddHttpClient<IUserRoles, UserRoles>();
@@ -61,7 +69,8 @@ app.UseSession();
 app.UseAuthentication();
 app.UseAuthorization();
 
-app.MapRazorPages();
+//app.MapRazorPages();
+app.UseNotyf();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=UserRegister}/{action=Index}/{id?}");

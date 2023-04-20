@@ -12,5 +12,6 @@ namespace LoginSystemView.Services.IServices
         Task<T> EditUserRoles<T>(UserRolesModel role);
         Task<T> DeleteUserRoles<T>(string userId, string roleName);
         Task<T> AssignRoles<T>(RoleAssignModel roleAssign);
+        Task<T> GetAllUser<T>();
     }
 }

@@ -1,4 +1,5 @@
 ﻿
+using Azure.Core;
 using Castle.Core.Smtp;
 using System;
 using System.Collections.Generic;
@@ -34,9 +35,16 @@ namespace MailSenderApp.Service
                 EnableSsl = enableSSL
 
             };
-             client.SendMailAsync(
-                new MailMessage(userName, from,subject,messageText) { IsBodyHtml=true}
-                );
+            client.SendMailAsync(
+               new MailMessage(userName, to, subject, messageText) { IsBodyHtml = true }
+               );
+
+        }
+
+    
+        public void Send(IEnumerable<MailMessage> messages)
+        {
+            throw new NotImplementedException();
         }
 
         public void Send(MailMessage message)
@@ -44,14 +52,26 @@ namespace MailSenderApp.Service
             throw new NotImplementedException();
         }
 
-        public void Send(IEnumerable<MailMessage> messages)
-        {
-            throw new NotImplementedException();
-        }
+        //public async Task  SendEmailAsync(string email, string subject, string htmlMessage)
+        //{
+        //    string fromMail = userName;
+        //    string fromPassword = password;
 
-        public Task SendEmailAsync(string email, string subject, string htmlMessage)
-        {
-            throw new NotImplementedException();
-        }
+        //    MailMessage message = new MailMessage();
+        //    message.From = new MailAddress(fromMail);
+        //    message.Subject = subject;
+        //    message.To.Add(new MailAddress(email));
+        //    message.Body = "<html><body> " + htmlMessage + " </body></html>";
+        //    message.IsBodyHtml = true;
+
+        //    var smtpClient = new SmtpClient("smtp.gmail.com")
+        //    {
+        //        Port = port,
+        //        Credentials = new NetworkCredential(fromMail, fromPassword),
+        //        EnableSsl = enableSSL,
+        //    };
+        //    smtpClient.Send(message);
+         
+        //}
     }
 }

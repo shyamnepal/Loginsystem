@@ -15,16 +15,19 @@
                 <div class="form-group">
                     <label for="exampleInputUsername1">User Name</label>
                     <input asp-for="Username" type="text" class="form-control" id="exampleInputUsername" placeholder="Username">
+                    <span asp-validation-for="Username" class="text-danger"></span>
                 </div>
                 <div class="form-group">
                     <label for="exampleEmail">Email</label>
                     <input asp-for="Email" type="text" class="form-control" id="exampleEmail" placeholder="Email">
+                    <span asp-validation-for="Email" class="text-danger"></span>
                 </div>
                 <div class="form-group">
                     <label for="exampleRole">Role</label>
                     @*                    <dre" type="text" class="form-control" id="exampleRole" placeholder="Role">
                     *@
                     @Html.DropDownListFor(x=>x.RoleId, drop,"Select Role", new { @class ="form-control"})
+                    <span asp-validation-for="RoleId" class="text-danger"></span>
                 </div>
 
 

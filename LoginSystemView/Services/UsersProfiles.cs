@@ -41,6 +41,8 @@ namespace LoginSystemView.Services
             });
         }
 
+      
+
         public Task<T> GetUserProfileAsync<T>(string username)
         {
             return SendAsync<T>(new ApiRequest

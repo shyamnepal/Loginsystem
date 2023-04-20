@@ -32,6 +32,8 @@ namespace LoginSystemView.Services
             });
         }
 
+       
+
         public Task<T> CreateAsync<T>(AddRoles role)
         {
             return SendAsync<T>(new ApiRequest()
@@ -67,6 +69,17 @@ namespace LoginSystemView.Services
             {
                 ApiType = ApiType.GET,
                 ApiUrl = baseurl + "/api/UserInfo",
+            });
+        }
+
+        public Task<T> GetAllUser<T>()
+        {
+
+            return SendAsync<T>(new ApiRequest
+            {
+                ApiUrl = baseurl + "/api/RoleAssign/GetUserInfo",
+                ApiType=ApiType.GET,
+
             });
         }
 

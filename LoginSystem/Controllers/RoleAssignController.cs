@@ -30,7 +30,9 @@ namespace LoginSystem.Controllers
             {
                 if (!ModelState.IsValid)
                 {
-                    return BadRequest("Model is invalid");
+                    _response.IsSuccess = false;
+                    _response.ErrorMessages =new List<string> { "Model is invalid" };
+                    return BadRequest(_response);
                 }
                 RoleAssignModel role = new RoleAssignModel();
                 role.UserName = model.UserName;
@@ -38,15 +40,22 @@ namespace LoginSystem.Controllers
                 var user = _userManager.FindByNameAsync(role.UserName).Result;
                 if (!_roleManager.RoleExistsAsync(model.Name).GetAwaiter().GetResult())
                 {
-                    return BadRequest("Role does not exist");
+                    _response.IsSuccess = false;
+                    _response.ErrorMessages = new List<string> { "Role does not exist"};
+                    return BadRequest(_response);
                 }
 
                 if (user == null)
-                    return BadRequest("User not found");
+                {
+                    _response.IsSuccess = false;
+                    _response.ErrorMessages = new List<string> { "User not found" };
+                    return BadRequest(_response);
+                }
                 await _userManager.AddToRoleAsync(user, model.Name);
 
 
                 _response.Result = user;
+                _response.IsSuccess = true;
                 _response.StatusCode = HttpStatusCode.Created;
                 return Ok(_response);
 
@@ -61,6 +70,15 @@ namespace LoginSystem.Controllers
 
 
 
+        }
+        [HttpGet("GetUserInfo")]
+        public async Task<ActionResult<ApiResponse>> getUserName()
+        {
+            var user=_userManager.Users.ToList();
+            _response.Result = user;
+            _response.IsSuccess = true;
+            _response.StatusCode = HttpStatusCode.OK;
+            return Ok(_response);
         }
 
     }

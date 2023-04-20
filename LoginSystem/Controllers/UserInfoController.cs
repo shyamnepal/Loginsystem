@@ -47,6 +47,7 @@ namespace LoginSystem.Controllers
                                       }).ToList();
 
                 _response.Result = usersWithRoles;
+                _response.IsSuccess = true;
                 _response.StatusCode = HttpStatusCode.OK;
                 return Ok(_response);
             }catch(Exception ex)
@@ -69,7 +70,9 @@ namespace LoginSystem.Controllers
 
                 if (user == null)
                 {
-                    return NotFound();
+                    _response.IsSuccess = false;
+                    _response.ErrorMessages = new List<string> { "User Not Found" };
+                    return NotFound(_response);
                 }
 
                 var roles = await _userManager.GetRolesAsync(user);
@@ -83,6 +86,7 @@ namespace LoginSystem.Controllers
 
                 };
                 _response.Result = UserRoles;
+                _response.IsSuccess = true;
                 _response.StatusCode = HttpStatusCode.OK;
                 return Ok(_response);
 

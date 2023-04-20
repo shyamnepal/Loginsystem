@@ -6,21 +6,21 @@ namespace LoginSystemView.Models
     public class User
     {
 
-        [Required]
+        [Required(ErrorMessage ="first Name is required")]
         public string FirstName { get; set; }
         
-        [Required]
+        [Required(ErrorMessage ="Last Name is required")]
         public string LastName { get; set; }
 
-        [Required]
+        [Required(ErrorMessage ="Email is required")]
         public string Email { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Phone Number is required")]
         public string PhoneNumber { get; set; }
 
-        [Required]
+        [Required(ErrorMessage="UserName is required")]
         public string UserName { get; set; }
 
-        [Required]
+        [Required (ErrorMessage = "Password is required")]
         public string PasswordHash { get; set; }
 
     }

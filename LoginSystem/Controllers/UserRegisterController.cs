@@ -1,4 +1,5 @@
 ﻿using Antlr.Runtime;
+using Azure.Core;
 using Azure.Messaging;
 using Castle.Core.Smtp;
 using LoginSystem.Data;
@@ -42,24 +43,25 @@ namespace LoginSystem.Controllers
                 return BadRequest(ModelState);
             }
 
-            User obj = new User();
+            //User obj = new User();
 
-            obj.PhoneNumber = user.PhoneNumber;
-            obj.UserName = user.UserName;
-            obj.Email = user.Email;
-            obj.FirstName = user.FirstName;
-            obj.LastName = user.LastName;
+            //obj.PhoneNumber = user.PhoneNumber;
+            //obj.UserName = user.UserName;
+            //obj.Email = user.Email;
+            //obj.FirstName = user.FirstName;
+            //obj.LastName = user.LastName;
 
 
-            var result = await _userManager.CreateAsync(obj, user.PasswordHash);
+            var result = await _userManager.CreateAsync(user, user.PasswordHash);
 
             if (result.Succeeded)
             {
+               var res= await _userManager.AddToRoleAsync(user, "User");
                 var token = await _userManager.GenerateEmailConfirmationTokenAsync(user);
                 var confirmationLink = Url.Action("ConfirmEmail", "UserRegister", new { token, email = user.Email }, Request.Scheme);
                var message = user.Email + "Confirmation email link" + confirmationLink;
-                 _emailSender.Send(from: "shyamnepal595@gmail.com",to:user.Email,subject:"Confirm your email",messageText:message);
-                await _userManager.AddToRoleAsync(user, "User");
+                 _emailSender.Send(from: "shyamnepal595@gmail.com",to:user.Email,subject:"Confirm your email",messageText: "<html><body> " + message + " </body></html>");
+               
                 return Ok("User is created");
             }
             return BadRequest(result);

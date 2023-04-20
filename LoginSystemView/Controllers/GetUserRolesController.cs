@@ -1,4 +1,5 @@
-﻿using LoginSystemView.Models;
+﻿using AspNetCoreHero.ToastNotification.Abstractions;
+using LoginSystemView.Models;
 using LoginSystemView.Services.IServices;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
@@ -15,11 +16,13 @@ namespace LoginSystemView.Controllers
         private readonly IConfiguration _configuration;
         private readonly IHttpContextAccessor _httpContextAccessor;
         private readonly IUserRoles _userRoles;
-        public GetUserRolesController(IConfiguration configuration, IHttpContextAccessor httpContext, IUserRoles userRoles)
+        private readonly INotyfService _notyService;
+        public GetUserRolesController(IConfiguration configuration, IHttpContextAccessor httpContext, IUserRoles userRoles, INotyfService notyfService)
         {
             _configuration = configuration;
             _httpContextAccessor = httpContext;
             _userRoles = userRoles;
+            _notyService = notyfService;
         }
         
         public async Task<IActionResult> Index()
@@ -70,7 +73,6 @@ namespace LoginSystemView.Controllers
         {
             try
             {
-
                 
                 if (User.IsInRole("SupperAdmin"))
                 {
@@ -136,9 +138,31 @@ namespace LoginSystemView.Controllers
 
         }
 
-        public async Task<IActionResult> EditUserRoles([Bind(include: "Email,Id, Username, RoleId")] UserRolesModel role)
+        public async Task<IActionResult> EditUserRoles([Bind(include:"Email,Id,RoleId,Username")] UserRolesModel role)
         {
-            var baseUrl = _configuration.GetSection("Url")["baseUrl"];
+            ModelState.Remove("Role");
+
+            if (!ModelState.IsValid)
+            {
+                List<IdentityRole> userRole = new List<IdentityRole>();
+                var roleResponse = await _userRoles.GetOnlyRoles<Response>();
+                if (roleResponse != null)
+                {
+                    //get all the for select the roles 
+                    userRole = JsonConvert.DeserializeObject<List<IdentityRole>>(Convert.ToString(roleResponse.Result));
+                    var dropdown = userRole.Select(x => new SelectListItem()
+                    {
+                        Value = x.Id,
+                        Text = x.Name
+                    }).ToList();
+                    ViewData["dropDown"] = dropdown;
+                    return View("EditRoles");
+
+                }
+            }
+
+
+                var baseUrl = _configuration.GetSection("Url")["baseUrl"];
             var client = new HttpClient();
             client.BaseAddress = new Uri(baseUrl);
             UserRolesModel urole = new UserRolesModel();
@@ -148,10 +172,14 @@ namespace LoginSystemView.Controllers
             urole.Email = role.Email;
             urole.Username = role.Username;           
             var response = await _userRoles.EditUserRoles<Response>(role);
-            if (response!=null)
+            if (response!=null && response.IsSuccess)
+            {
+                _notyService.Success("Successfully edit the roles");
                 return RedirectToAction("Index");
+            }
 
-            
+
+            _notyService.Error(response.ErrorMessages.ToString());
             return View();
 
         }

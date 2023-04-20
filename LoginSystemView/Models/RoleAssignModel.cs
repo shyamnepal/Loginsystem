@@ -5,10 +5,10 @@ namespace LoginSystemView.Models
     public class RoleAssignModel
     {
      
-        [Required]
+        [Required(ErrorMessage ="UserName is required")]
         public string UserName { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Role Name is required")]
         public string Name { get; set; }
     }
 }

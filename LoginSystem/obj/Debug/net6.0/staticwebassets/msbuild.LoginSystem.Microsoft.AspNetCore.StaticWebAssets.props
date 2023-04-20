@@ -1,11 +1,11 @@
 ﻿<Project>
   <ItemGroup>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\1cbc278c-5336-4d4f-86fe-021bab353c79_WhatsApp Image 2022-08-20 at 7.58_edited.jpg))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\0e11aff1-ae32-494d-934f-1c48461922e8_WhatsApp Image 2022-08-20 at 7.58_edited.jpg))">
       <SourceType>Package</SourceType>
       <SourceId>LoginSystem</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/LoginSystem</BasePath>
-      <RelativePath>images/1cbc278c-5336-4d4f-86fe-021bab353c79_WhatsApp Image 2022-08-20 at 7.58_edited.jpg</RelativePath>
+      <RelativePath>images/0e11aff1-ae32-494d-934f-1c48461922e8_WhatsApp Image 2022-08-20 at 7.58_edited.jpg</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -14,14 +14,14 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\1cbc278c-5336-4d4f-86fe-021bab353c79_WhatsApp Image 2022-08-20 at 7.58_edited.jpg))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\0e11aff1-ae32-494d-934f-1c48461922e8_WhatsApp Image 2022-08-20 at 7.58_edited.jpg))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\1ddfe2e8-9f59-4d0c-a262-a010017ffbb6_kamldai.jpg))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\76ad6ad4-59c7-4acb-ab51-4ae6adbdbdf1_gosaikundalake_edited1.jpg))">
       <SourceType>Package</SourceType>
       <SourceId>LoginSystem</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/LoginSystem</BasePath>
-      <RelativePath>images/1ddfe2e8-9f59-4d0c-a262-a010017ffbb6_kamldai.jpg</RelativePath>
+      <RelativePath>images/76ad6ad4-59c7-4acb-ab51-4ae6adbdbdf1_gosaikundalake_edited1.jpg</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -30,14 +30,14 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\1ddfe2e8-9f59-4d0c-a262-a010017ffbb6_kamldai.jpg))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\76ad6ad4-59c7-4acb-ab51-4ae6adbdbdf1_gosaikundalake_edited1.jpg))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\43564580-9759-4289-a9d2-82b93c88d35a_WhatsApp Image 2022-08-20 at 7.58_edited.jpg))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\cd9c180e-6c83-48a1-abdb-a15848aeec3f_gosaikundalake_edited1.jpg))">
       <SourceType>Package</SourceType>
       <SourceId>LoginSystem</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/LoginSystem</BasePath>
-      <RelativePath>images/43564580-9759-4289-a9d2-82b93c88d35a_WhatsApp Image 2022-08-20 at 7.58_edited.jpg</RelativePath>
+      <RelativePath>images/cd9c180e-6c83-48a1-abdb-a15848aeec3f_gosaikundalake_edited1.jpg</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -46,135 +46,7 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\43564580-9759-4289-a9d2-82b93c88d35a_WhatsApp Image 2022-08-20 at 7.58_edited.jpg))</OriginalItemSpec>
-    </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\4bff7a64-45be-4c2f-b257-a5fbeac3c422_kamldai.jpg))">
-      <SourceType>Package</SourceType>
-      <SourceId>LoginSystem</SourceId>
-      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/LoginSystem</BasePath>
-      <RelativePath>images/4bff7a64-45be-4c2f-b257-a5fbeac3c422_kamldai.jpg</RelativePath>
-      <AssetKind>All</AssetKind>
-      <AssetMode>All</AssetMode>
-      <AssetRole>Primary</AssetRole>
-      <RelatedAsset></RelatedAsset>
-      <AssetTraitName></AssetTraitName>
-      <AssetTraitValue></AssetTraitValue>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\4bff7a64-45be-4c2f-b257-a5fbeac3c422_kamldai.jpg))</OriginalItemSpec>
-    </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\5c1c79ec-f221-4afb-bc50-59eedb2b2e72_shyamGosaikunda_edited.jpg))">
-      <SourceType>Package</SourceType>
-      <SourceId>LoginSystem</SourceId>
-      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/LoginSystem</BasePath>
-      <RelativePath>images/5c1c79ec-f221-4afb-bc50-59eedb2b2e72_shyamGosaikunda_edited.jpg</RelativePath>
-      <AssetKind>All</AssetKind>
-      <AssetMode>All</AssetMode>
-      <AssetRole>Primary</AssetRole>
-      <RelatedAsset></RelatedAsset>
-      <AssetTraitName></AssetTraitName>
-      <AssetTraitValue></AssetTraitValue>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\5c1c79ec-f221-4afb-bc50-59eedb2b2e72_shyamGosaikunda_edited.jpg))</OriginalItemSpec>
-    </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\7cf24c05-2b40-4243-8dd5-97680702c09c_shyamGosaikunda_edited.jpg))">
-      <SourceType>Package</SourceType>
-      <SourceId>LoginSystem</SourceId>
-      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/LoginSystem</BasePath>
-      <RelativePath>images/7cf24c05-2b40-4243-8dd5-97680702c09c_shyamGosaikunda_edited.jpg</RelativePath>
-      <AssetKind>All</AssetKind>
-      <AssetMode>All</AssetMode>
-      <AssetRole>Primary</AssetRole>
-      <RelatedAsset></RelatedAsset>
-      <AssetTraitName></AssetTraitName>
-      <AssetTraitValue></AssetTraitValue>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\7cf24c05-2b40-4243-8dd5-97680702c09c_shyamGosaikunda_edited.jpg))</OriginalItemSpec>
-    </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\8c1592a7-5cd2-4d4f-8716-c7f40d82c18c_WhatsApp Image 2022-08-20 at 7.58_edited.jpg))">
-      <SourceType>Package</SourceType>
-      <SourceId>LoginSystem</SourceId>
-      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/LoginSystem</BasePath>
-      <RelativePath>images/8c1592a7-5cd2-4d4f-8716-c7f40d82c18c_WhatsApp Image 2022-08-20 at 7.58_edited.jpg</RelativePath>
-      <AssetKind>All</AssetKind>
-      <AssetMode>All</AssetMode>
-      <AssetRole>Primary</AssetRole>
-      <RelatedAsset></RelatedAsset>
-      <AssetTraitName></AssetTraitName>
-      <AssetTraitValue></AssetTraitValue>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\8c1592a7-5cd2-4d4f-8716-c7f40d82c18c_WhatsApp Image 2022-08-20 at 7.58_edited.jpg))</OriginalItemSpec>
-    </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\8c719d3f-1783-43df-9a18-10febac916ac_shyamGosaikunda_edited.jpg))">
-      <SourceType>Package</SourceType>
-      <SourceId>LoginSystem</SourceId>
-      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/LoginSystem</BasePath>
-      <RelativePath>images/8c719d3f-1783-43df-9a18-10febac916ac_shyamGosaikunda_edited.jpg</RelativePath>
-      <AssetKind>All</AssetKind>
-      <AssetMode>All</AssetMode>
-      <AssetRole>Primary</AssetRole>
-      <RelatedAsset></RelatedAsset>
-      <AssetTraitName></AssetTraitName>
-      <AssetTraitValue></AssetTraitValue>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\8c719d3f-1783-43df-9a18-10febac916ac_shyamGosaikunda_edited.jpg))</OriginalItemSpec>
-    </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\9f9c169b-3d04-42e9-a8ea-6343f9812a7a_kamldai.jpg))">
-      <SourceType>Package</SourceType>
-      <SourceId>LoginSystem</SourceId>
-      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/LoginSystem</BasePath>
-      <RelativePath>images/9f9c169b-3d04-42e9-a8ea-6343f9812a7a_kamldai.jpg</RelativePath>
-      <AssetKind>All</AssetKind>
-      <AssetMode>All</AssetMode>
-      <AssetRole>Primary</AssetRole>
-      <RelatedAsset></RelatedAsset>
-      <AssetTraitName></AssetTraitName>
-      <AssetTraitValue></AssetTraitValue>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\9f9c169b-3d04-42e9-a8ea-6343f9812a7a_kamldai.jpg))</OriginalItemSpec>
-    </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\a9110efa-e981-4e9f-b118-9f1ab1fc7314_WhatsApp Image 2022-08-20 at 7.58_edited.jpg))">
-      <SourceType>Package</SourceType>
-      <SourceId>LoginSystem</SourceId>
-      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/LoginSystem</BasePath>
-      <RelativePath>images/a9110efa-e981-4e9f-b118-9f1ab1fc7314_WhatsApp Image 2022-08-20 at 7.58_edited.jpg</RelativePath>
-      <AssetKind>All</AssetKind>
-      <AssetMode>All</AssetMode>
-      <AssetRole>Primary</AssetRole>
-      <RelatedAsset></RelatedAsset>
-      <AssetTraitName></AssetTraitName>
-      <AssetTraitValue></AssetTraitValue>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\a9110efa-e981-4e9f-b118-9f1ab1fc7314_WhatsApp Image 2022-08-20 at 7.58_edited.jpg))</OriginalItemSpec>
-    </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\f191c3b0-4121-498a-990a-729e58b1d63e_shyamGosaikunda_edited.jpg))">
-      <SourceType>Package</SourceType>
-      <SourceId>LoginSystem</SourceId>
-      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/LoginSystem</BasePath>
-      <RelativePath>images/f191c3b0-4121-498a-990a-729e58b1d63e_shyamGosaikunda_edited.jpg</RelativePath>
-      <AssetKind>All</AssetKind>
-      <AssetMode>All</AssetMode>
-      <AssetRole>Primary</AssetRole>
-      <RelatedAsset></RelatedAsset>
-      <AssetTraitName></AssetTraitName>
-      <AssetTraitValue></AssetTraitValue>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\f191c3b0-4121-498a-990a-729e58b1d63e_shyamGosaikunda_edited.jpg))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\cd9c180e-6c83-48a1-abdb-a15848aeec3f_gosaikundalake_edited1.jpg))</OriginalItemSpec>
     </StaticWebAsset>
   </ItemGroup>
 </Project>

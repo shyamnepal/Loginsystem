@@ -1,4 +1,5 @@
-﻿using LoginSystemView.Models;
+﻿using AspNetCoreHero.ToastNotification.Abstractions;
+using LoginSystemView.Models;
 using LoginSystemView.Services.IServices;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
@@ -22,14 +23,14 @@ namespace LoginSystemView.Controllers
         private readonly IHttpClientFactory _httpClientFactory;
         private readonly JsonSerializerOptions _options;
         private readonly IConfiguration _configuration;
-        private readonly IToastNotification _toastNotification;
+        private readonly INotyfService _toastNotification;
         private readonly IUserRoles _userRoles;
 
 
         public UserRegisterController(
             IHttpClientFactory httpClientFactory,
             IConfiguration configuration,
-            IToastNotification toastNotification,
+            INotyfService toastNotification,
             IUserRoles userRoles
 
 
@@ -50,8 +51,6 @@ namespace LoginSystemView.Controllers
 
             using (var httpClient = new HttpClient())
             {
-                var response = httpClient.GetAsync(baseUrl + "/api/UserRegister/GetData?userName=shyam123456").Result.Content.ReadAsStringAsync();
-                var data = JsonConvert.DeserializeObject<User>(response.Result);
                 return View();
             }
 
@@ -67,25 +66,22 @@ namespace LoginSystemView.Controllers
 
         public async Task<IActionResult> Create(User UserData)
         {
+            if (!ModelState.IsValid)
+                return View("CreateUser");
             var baseUrl = _configuration.GetSection("Url")["baseUrl"];
             var client = new HttpClient();
             client.BaseAddress = new Uri(baseUrl);
-            User user = new User();
-            user.UserName = UserData.UserName;
-            user.PhoneNumber = UserData.PhoneNumber;
-            user.FirstName = UserData.FirstName;
-            user.LastName = UserData.LastName;
-            user.Email = UserData.Email;
-            user.PasswordHash = UserData.PasswordHash;
-            HttpContent body = new StringContent(JsonConvert.SerializeObject(user), Encoding.UTF8, "application/json");
+           
+             HttpContent body = new StringContent(JsonConvert.SerializeObject(UserData), Encoding.UTF8, "application/json");
             var response = client.PostAsync("/api/UserRegister", body).Result;
             if (response.IsSuccessStatusCode)
             {
                 var content = await response.Content.ReadAsStringAsync();
-
+                _toastNotification.Success("User Register Successfully");
                 return RedirectToAction("Index");
 
             }
+            _toastNotification.Error("Failed to register please try again");
             return RedirectToAction("CreateUser");
 
 
@@ -104,14 +100,13 @@ namespace LoginSystemView.Controllers
 
         public async Task<IActionResult> UserLogin(UserLogin UserCredential)
         {
+            if (!ModelState.IsValid)
+                return View("Index");
             var baseUrl = _configuration.GetSection("Url")["baseUrl"];
             var client = new HttpClient();
             client.BaseAddress = new Uri(baseUrl);
-            UserLogin user = new UserLogin();
-            user.UserName = UserCredential.UserName;
-            user.Password = UserCredential.Password;
-
-            HttpContent body = new StringContent(JsonConvert.SerializeObject(user), Encoding.UTF8, "application/json");
+        
+            HttpContent body = new StringContent(JsonConvert.SerializeObject(UserCredential), Encoding.UTF8, "application/json");
             var response = client.PostAsync("/api/UserRegister/Login", body).Result;
             if (response.IsSuccessStatusCode)
             {
@@ -120,15 +115,10 @@ namespace LoginSystemView.Controllers
 
                 var claims = new List<Claim>
                 {
-                     new Claim(ClaimTypes.Name, user.UserName),
+                     new Claim(ClaimTypes.Name, UserCredential.UserName),
                      new Claim(type: "id", value: data.userId),
                      new Claim(ClaimTypes.Email, data.userEmail),
                      new Claim(ClaimTypes.NameIdentifier, data.userId)
-
-
-
-
-
 
                 };
                 List<UserRolesModel> list = new();
@@ -177,7 +167,7 @@ namespace LoginSystemView.Controllers
 
                     }
                 }
-                _toastNotification.AddSuccessToastMessage("Login Successfully");
+                _toastNotification.Success("Login Successfully");
 
                 //Add HttpContext
                 HttpContext.Session.SetString("token", data.token);
@@ -188,7 +178,7 @@ namespace LoginSystemView.Controllers
 
 
 
-            _toastNotification.AddSuccessToastMessage("Login faield");
+            _toastNotification.Error("Login faield");
             return RedirectToAction("Index");
         }
     }
